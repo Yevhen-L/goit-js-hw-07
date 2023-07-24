@@ -2,6 +2,7 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 document.addEventListener('DOMContentLoaded', function () {
+
   const gallery = document.querySelector('.gallery');
 
   function createGalleryItem(item) {
@@ -24,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
     return galleryItem;
   }
 
-  function openModal(event) {
+    function openModal(event) {
     event.preventDefault();
 
     if (event.target.classList.contains('gallery__image')) {
       const largeImageURL = event.target.dataset.source;
-      const instance = basicLightbox.create(`<img src="${largeImageURL}">`);
+      const instance = basicLightbox.create(`< img src = "${largeImageURL}" width="1800" height="1600" ></>');`);
       instance.show();
 
       document.addEventListener('keydown', closeModalOnEscape);
