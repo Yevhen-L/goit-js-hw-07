@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
 
 document.addEventListener('DOMContentLoaded', function () {
-
   const gallery = document.querySelector('.gallery');
 
   function createGalleryItem(item) {
@@ -18,19 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
     image.src = item.preview;
     image.alt = item.description;
     image.setAttribute('data-source', item.original);
-    
+
     link.appendChild(image);
     galleryItem.appendChild(link);
 
     return galleryItem;
   }
 
-    function openModal(event) {
+  function openModal(event) {
     event.preventDefault();
 
     if (event.target.classList.contains('gallery__image')) {
       const largeImageURL = event.target.dataset.source;
-      const instance = basicLightbox.create(`< img src = "${largeImageURL}" width="1800" height="1600" ></>');`);
+      const instance = basicLightbox.create(`<img src="${largeImageURL}" width="1800" height="1600">`);
       instance.show();
 
       document.addEventListener('keydown', closeModalOnEscape);
@@ -52,4 +50,3 @@ document.addEventListener('DOMContentLoaded', function () {
   gallery.addEventListener('click', openModal);
 });
 
-console.log(galleryItems);
