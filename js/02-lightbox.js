@@ -1,6 +1,5 @@
 import {galleryItems} from './gallery-items.js';
 const gallery = document.querySelector('.gallery');
-
 function createGallery() {
   const createEl = galleryItems
     .map(
@@ -15,7 +14,6 @@ function createGallery() {
   gallery.innerHTML = createEl;
 }
 createGallery();
-
 let lightbox = new SimpleLightbox('.gallery a', {
   caption: 'true',
   captionsData: "alt",
